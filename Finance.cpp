@@ -103,7 +103,10 @@ void extraExpenses() {
 
 //function to calculate percentage of income for each bill
 int calculate() {
+electricBill = (electricBill * 100) / grossAverage
+internetBill = (internetBill * 100) / grossAverage
 
+return electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertaiment, food, cellphone, health, transportation;
 }
 
 //function to print chart showing finance information
