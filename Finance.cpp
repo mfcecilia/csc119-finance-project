@@ -120,7 +120,14 @@ int calculate() {
 
 //function to print chart showing finance information
 int chart() {
-
+  cout << "Finances" << endl;
+  cout << "Electric Bill" << setw(7) << electricBill << endl;
+  cout << "Internet Bill" << setw(7) << internetBill << endl;
+  cout << "Credit Card Bill" << setw(7) << creditCardBill << endl;
+  cout << "Gas Bill" << setw(7) << gasBill << endl;
+  cout << "Car Loan" << setw(7) << carLoan << endl;
+  cout << "Car Insurance" << setw(7) << carInsurance << endl;
+  cout << "Entertainment" << setw(7) << entertaiment << endl;
 }
 
 int main() {
