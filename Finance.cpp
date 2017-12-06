@@ -105,7 +105,7 @@ double extraExpenses() {
 <<<<<<< HEAD
       cout << "Great all data has been taken" << endl;
 =======
-      cout << "Great all data has been taken" << endl << endl;
+      cout << "Great all data has been taken" << endl;
 >>>>>>> db326093810905114dea5d2107d4c55920c944f0
       break; //end loop
     }
