@@ -101,6 +101,16 @@ void extraExpenses() {
   }
 }
 
+//function to calculate percentage of income for each bill
+int calculate() {
+
+}
+
+//function to print chart showing finance information
+int chart() {
+
+}
+
 int main() {
   inputData();
   extraExpenses();
