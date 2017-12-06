@@ -12,22 +12,22 @@ Working on outliers that may skew data
 using namespace std;
 
 //Global variables
-int grossAverage; //monthly income variable
-int electricBill; //electric bill due
-int internetBill; //internet bill due
-int creditCardBill; //credit card bill due
-int gasBill; //gas bill due
-int carLoan; //car payment due
-int carInsurance; // car insurance bill due
-int entertainment;//entertaiment expense
-int food; //food expense
-int cellphone; //cell phone expense
-int health; // health expense
-int transportation; // transportation expense
-int other; //other expense not listed in list
+double grossAverage; //monthly income variable
+double electricBill; //electric bill due
+double internetBill; //internet bill due
+double creditCardBill; //credit card bill due
+double gasBill; //gas bill due
+double carLoan; //car payment due
+double carInsurance; // car insurance bill due
+double entertainment;//entertaiment expense
+double food; //food expense
+double cellphone; //cell phone expense
+double health; // health expense
+double transportation; // transportation expense
+double other; //other expense not listed in list
 
 //Function for generic bills
-int inputData () {
+double inputData () {
   //User input income
   cout << "Enter monthly average gross income: ";
   cin >> grossAverage;
@@ -50,7 +50,7 @@ int inputData () {
 }
 
 //Function for extra bills/expenses
-int extraExpenses() {
+double extraExpenses() {
   //response variable
   char response;
   //user input
@@ -108,7 +108,7 @@ int extraExpenses() {
 }
 
 //function to calculate percentage of income for each bill
-int calculate() {
+double calculate() {
   electricBill = (electricBill * 100) / grossAverage;
   internetBill = (internetBill * 100) / grossAverage;
   creditCardBill = (creditCardBill * 100) / grossAverage;
@@ -140,7 +140,7 @@ void chart() {
   cout << "Transportation" << setw(7) << transportation << endl;
 }
 
-int main() {
+double main() {
   inputData();
   extraExpenses();
   calculate();
