@@ -13,6 +13,7 @@ using namespace std;
 
 //Global variables
 double grossAverage; //monthly income variable
+double rent;
 double electricBill; //electric bill due
 double internetBill; //internet bill due
 double creditCardBill; //credit card bill due
@@ -31,8 +32,12 @@ double inputData () {
   //User input income
   cout << "Enter monthly average gross income: ";
   cin >> grossAverage;
+  cout << endl;
+  cout << endl;
   //User input bills
   cout << "Next we will enter bill information." << endl;
+  cout << "Rent/Mortgage: ";
+  cin >> rent;
   cout << "Electric bill: ";
   cin >> electricBill;
   cout << "Internet bill: ";
@@ -46,7 +51,7 @@ double inputData () {
   cout<< "Car Insurance: ";
   cin >> carInsurance;
   //Return all values in order to make them usable in future functions
-  return grossAverage, electricBill, internetBill, gasBill, creditCardBill, carLoan, carInsurance;
+  return grossAverage, rent, electricBill, internetBill, gasBill, creditCardBill, carLoan, carInsurance;
 }
 
 //Function for extra bills/expenses
@@ -54,6 +59,7 @@ double extraExpenses() {
   //response variable
   char response;
   //user input
+  cout << endl << endl;
   cout << "Are there other monthly expenses you would like to add? (Y/N): ";
   cin >> response; //if else determined by input
   //If there are more responses user can choose from a number of categories
@@ -96,7 +102,11 @@ double extraExpenses() {
     cin >> additions; //user input from previous question
     if (additions == 'Y') { continue;} //reloop
     else {
+<<<<<<< HEAD
       cout << "Great all data has been taken" << endl;
+=======
+      cout << "Great all data has been taken" << endl << endl;
+>>>>>>> db326093810905114dea5d2107d4c55920c944f0
       break; //end loop
     }
 }
@@ -109,6 +119,7 @@ double extraExpenses() {
 
 //function to calculate percentage of income for each bill
 double calculate() {
+  rent = (rent * 100) / grossAverage;
   electricBill = (electricBill * 100) / grossAverage;
   internetBill = (internetBill * 100) / grossAverage;
   creditCardBill = (creditCardBill * 100) / grossAverage;
@@ -121,13 +132,14 @@ double calculate() {
   health = (health * 100) / grossAverage;
   transportation = (transportation * 100) / grossAverage;
 
-  return electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+  return electricBill, rent, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
 }
 
 //function to print chart showing finance information
 void chart() {
   cout << "Distribution of Income" << endl;
-  cout << "-------------------------" << endl;
+  cout << "-------------------------------------------------------------------" << endl;
+  cout << "Rent/Mortgage" << setw(7)<< rent << endl;
   cout << "Electric Bill" << setw(7) << electricBill << endl;
   cout << "Internet Bill" << setw(7) << internetBill << endl;
   cout << "Credit Card Bill" << setw(7) << creditCardBill << endl;
