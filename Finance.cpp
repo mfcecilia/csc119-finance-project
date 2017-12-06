@@ -105,6 +105,15 @@ void extraExpenses() {
 int calculate() {
 electricBill = (electricBill * 100) / grossAverage
 internetBill = (internetBill * 100) / grossAverage
+creditCardBill = (creditCardBill * 100) / grossAverage
+gasBill = (gasBill * 100) / grossAverage
+carLoan = (carLoan * 100) / grossAverage
+carInsurance = (carInsurance * 100) / grossAverage
+entertaiment = (entertaiment * 100) / grossAverage
+food = (food * 100) / grossAverage
+cellphone = (cellphone * 100) / grossAverage
+health = (health * 100) / grossAverage
+transportation = (transportation * 100) / grossAverage
 
 return electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertaiment, food, cellphone, health, transportation;
 }
