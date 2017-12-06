@@ -13,19 +13,19 @@ using namespace std;
 
 //Global variables
 double grossAverage; //monthly income variable
-double rent;
-double electricBill; //electric bill due
-double internetBill; //internet bill due
-double creditCardBill; //credit card bill due
-double gasBill; //gas bill due
-double carLoan; //car payment due
-double carInsurance; // car insurance bill due
-double entertainment;//entertaiment expense
-double food; //food expense
-double cellphone; //cell phone expense
-double health; // health expense
-double transportation; // transportation expense
-double other; //other expense not listed in list
+double rent[3];
+double electricBill[3]; //electric bill due
+double internetBill[3]; //internet bill due
+double creditCardBill[3]; //credit card bill due
+double gasBill[3]; //gas bill due
+double carLoan[3]; //car payment due
+double carInsurance[3]; // car insurance bill due
+double entertainment[3];//entertaiment expense
+double food[3]; //food expense
+double cellphone[3]; //cell phone expense
+double health[3]; // health expense
+double transportation[3]; // transportation expense
+double other[3]; //other expense not listed in list
 
 //Function for generic bills
 double inputData () {
@@ -37,19 +37,19 @@ double inputData () {
   //User input bills
   cout << "Next we will enter bill information." << endl;
   cout << "Rent/Mortgage: ";
-  cin >> rent;
+  cin >> rent[0];
   cout << "Electric bill: ";
-  cin >> electricBill;
+  cin >> electricBill[0];
   cout << "Internet bill: ";
-  cin >> internetBill;
+  cin >> internetBill[0];
   cout << "Gas bill: ";
-  cin >> gasBill;
+  cin >> gasBill[0];
   cout << "Credit card bill: ";
-  cin >> creditCardBill;
+  cin >> creditCardBill[0];
   cout << "Car loan: ";
-  cin >> carLoan;
+  cin >> carLoan[0];
   cout<< "Car Insurance: ";
-  cin >> carInsurance;
+  cin >> carInsurance[0];
   //Return all values in order to make them usable in future functions
   return grossAverage, rent, electricBill, internetBill, gasBill, creditCardBill, carLoan, carInsurance;
 }
@@ -78,22 +78,22 @@ double extraExpenses() {
     cin >> extraExpense;//user input for extra expenses
     switch(extraExpense) {
       case 'A':   cout << "Entertainment expense: ";
-                  cin >> entertainment; //entertainment expense
+                  cin >> entertainment[0]; //entertainment expense
                   break;
       case 'B':   cout  << "Food/Groceries expense: ";
-                  cin >> food;//food expense
+                  cin >> food[0];//food expense
                   break;
       case 'C':   cout << "Cell phone expense: ";
-                  cin >> cellphone;//cell phone expense
+                  cin >> cellphone[0];//cell phone expense
                   break;
       case 'D':   cout << "Gym/Health expense: ";
-                  cin >> health;//health expense
+                  cin >> health[0];//health expense
                   break;
       case 'E':   cout << "Transportation/Gas expense: ";
-                  cin >> transportation;//tranpostation expense
+                  cin >> transportation[0];//tranpostation expense
                   break;
       case 'F':   cout << "Other expense: ";
-                  cin >> other; //other expenses not on list
+                  cin >> other[0]; //other expenses not on list
                   break;
       default:    cout << "Invalid response"; //all other inputs
     }
@@ -102,11 +102,7 @@ double extraExpenses() {
     cin >> additions; //user input from previous question
     if (additions == 'Y') { continue;} //reloop
     else {
-<<<<<<< HEAD
       cout << "Great all data has been taken" << endl;
-=======
-      cout << "Great all data has been taken" << endl;
->>>>>>> db326093810905114dea5d2107d4c55920c944f0
       break; //end loop
     }
 }
@@ -118,26 +114,33 @@ double extraExpenses() {
 }
 
 //function to calculate percentage of income for each bill
-double calculate() {
-  rent = (rent * 100) / grossAverage;
-  electricBill = (electricBill * 100) / grossAverage;
-  internetBill = (internetBill * 100) / grossAverage;
-  creditCardBill = (creditCardBill * 100) / grossAverage;
-  gasBill = (gasBill * 100) / grossAverage;
-  carLoan = (carLoan * 100) / grossAverage;
-  carInsurance = (carInsurance * 100) / grossAverage;
-  entertainment = (entertainment * 100) / grossAverage;
-  food = (food * 100) / grossAverage;
-  cellphone = (cellphone * 100) / grossAverage;
-  health = (health * 100) / grossAverage;
-  transportation = (transportation * 100) / grossAverage;
+double calculatePercent() {
+  rent[1] = (rent[0] * 100) / grossAverage;
+  electricBill[1] = (electricBill[0] * 100) / grossAverage;
+  internetBill[1] = (internetBill[0] * 100) / grossAverage;
+  creditCardBill[1] = (creditCardBill[0] * 100) / grossAverage;
+  gasBill[1] = (gasBill[0] * 100) / grossAverage;
+  carLoan[1] = (carLoan[0] * 100) / grossAverage;
+  carInsurance[1] = (carInsurance[0] * 100) / grossAverage;
+  entertainment[1] = (entertainment[0] * 100) / grossAverage;
+  food[1] = (food[0] * 100) / grossAverage;
+  cellphone[1] = (cellphone[0] * 100) / grossAverage;
+  health[1] = (health[0] * 100) / grossAverage;
+  transportation[1] = (transportation[0] * 100) / grossAverage;
 
+  return electricBill, rent, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+}
+
+//function to calculate annual amount spent on those bills
+double calculateAnnual() {
   return electricBill, rent, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
 }
 
 //function to print chart showing finance information
 void chart() {
   cout << "Distribution of Income" << endl;
+  cout << "-------------------------------------------------------------------" << endl;
+  cout << "Bill      "<<"    Percent of Income     " << "   Annual Cost" << endl;
   cout << "-------------------------------------------------------------------" << endl;
   cout << "Rent/Mortgage" << setw(7)<< rent << endl;
   cout << "Electric Bill" << setw(7) << electricBill << endl;
