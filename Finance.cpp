@@ -11,15 +11,22 @@ Working on outliers that may skew data
 #include <stdio.h>
 using namespace std;
 
+//Global variables
+int grossAverage; //monthly income variable
+int electricBill; //electric bill due
+int internetBill; //internet bill due
+int creditCardBill; //credit card bill due
+int gasBill; //gas bill due
+int carLoan; //car payment due
+int carInsurance; // car insurance bill due
+int entertainment;//entertaiment expense
+int food; //food expense
+int cellphone; //cell phone expense
+int health; // health expense
+int transportation; // transportation expense
+
 //Function for generic bills
 void inputData () {
-  int grossAverage; //monthly income variable
-  int electricBill; //electric bill due
-  int internetBill; //internet bill due
-  int creditCardBill; //credit card bill due
-  int gasBill; //gas bill due
-  int carLoan; //car payment due
-  int carInsurance; // car insurance bill due
   //User input income
   cout << "Enter monthly average gross income: ";
   cin >> grossAverage;
@@ -60,11 +67,6 @@ void extraExpenses() {
     cout << "E - Transportation/Gas" << endl;
     cout << "F - Other" << endl;
     cin >> extraExpense;
-    int entertainment;
-    int food;
-    int cellphone;
-    int health;
-    int transportation;
     switch(extraExpense) {
       case 'A':   cout << "Entertainment expense: ";
                   cin >> entertainment;
