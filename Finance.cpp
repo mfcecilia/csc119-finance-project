@@ -128,12 +128,24 @@ double calculatePercent() {
   health[1] = (health[0] * 100) / grossAverage;
   transportation[1] = (transportation[0] * 100) / grossAverage;
 
-  return electricBill, rent, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+  return rent, electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
 }
 
 //function to calculate annual amount spent on those bills
 double calculateAnnual() {
-  return electricBill, rent, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+  rent[2] = rent[0] * 12;
+  electricBill[2] = electricBill[0] * 12;
+  internetBill[2] = internetBill[0] * 12;
+  creditCardBill[2] = creditCardBill[0] * 12;
+  gasBill[2] = gasBill[0] * 12;
+  carLoan[2] = carLoan[0] * 12;
+  carInsurance[2] = carInsurance[0] * 12;
+  entertainment[2] = entertainment[0] * 12;
+  food[2] = food[0] * 12;
+  cellphone[2] = cellphone[0] * 12;
+  health[2] = health[0] * 12;
+  transportation[2] = transportation[0] * 12;
+  return rent, electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
 }
 
 //function to print chart showing finance information
@@ -142,18 +154,18 @@ void chart() {
   cout << "-------------------------------------------------------------------" << endl;
   cout << "Bill      "<<"    Percent of Income     " << "   Annual Cost" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  cout << "Rent/Mortgage" << setw(7)<< rent << endl;
-  cout << "Electric Bill" << setw(7) << electricBill << endl;
-  cout << "Internet Bill" << setw(7) << internetBill << endl;
-  cout << "Credit Card Bill" << setw(7) << creditCardBill << endl;
-  cout << "Gas Bill" << setw(7) << gasBill << endl;
-  cout << "Car Loan" << setw(7) << carLoan << endl;
-  cout << "Car Insurance" << setw(7) << carInsurance << endl;
-  cout << "Entertainment" << setw(7) << entertainment << endl;
-  cout << "Food" << setw(7) << food << endl;
-  cout << "Cellphone" << setw(7) << cellphone << endl;
-  cout << "Health" << setw(7) << health << endl;
-  cout << "Transportation" << setw(7) << transportation << endl;
+  cout << "Rent/Mortgage" << setw(7)<< rent[1] << rent[2] << endl;
+  cout << "Electric Bill" << setw(7) << electricBill[1] << electricBill[2] << endl;
+  cout << "Internet Bill" << setw(7) << internetBill[1] << internetBill[2] << endl;
+  cout << "Credit Card Bill" << setw(7) << creditCardBill[1] << creditCardBill[2] << endl;
+  cout << "Gas Bill" << setw(7) << gasBill[1] << gasBill[2] << endl;
+  cout << "Car Loan" << setw(7) << carLoan[1] << carLoan[2] << endl;
+  cout << "Car Insurance" << setw(7) << carInsurance[1] << carInsurance[2] << endl;
+  cout << "Entertainment" << setw(7) << entertainment[1] << entertainment[2] << endl;
+  cout << "Food" << setw(7) << food[1] << food[2] << endl;
+  cout << "Cellphone" << setw(7) << cellphone[1] << cellphone[2] << endl;
+  cout << "Health" << setw(7) << health[1] << health[2] << endl;
+  cout << "Transportation" << setw(7) << transportation[2] << transportation[2] << endl;
 }
 
 int main() {
