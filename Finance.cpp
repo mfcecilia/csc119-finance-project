@@ -140,7 +140,7 @@ void chart() {
   cout << "Transportation" << setw(7) << transportation << endl;
 }
 
-double main() {
+int main() {
   inputData();
   extraExpenses();
   calculate();
