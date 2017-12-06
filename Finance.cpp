@@ -143,5 +143,7 @@ void chart() {
 int main() {
   inputData();
   extraExpenses();
+  calculate();
+  chart();
   return 0;
 }
