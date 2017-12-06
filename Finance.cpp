@@ -24,9 +24,10 @@ int food; //food expense
 int cellphone; //cell phone expense
 int health; // health expense
 int transportation; // transportation expense
+int other; //other expense not listed in list
 
 //Function for generic bills
-void inputData () {
+int inputData () {
   //User input income
   cout << "Enter monthly average gross income: ";
   cin >> grossAverage;
@@ -44,10 +45,12 @@ void inputData () {
   cin >> carLoan;
   cout<< "Car Insurance: ";
   cin >> carInsurance;
+  //Return all values in order to make them usable in future functions
+  return grossAverage, electricBill, internetBill, gasBill, creditCardBill, carLoan, carInsurance;
 }
 
 //Function for extra bills/expenses
-void extraExpenses() {
+int extraExpenses() {
   //response variable
   char response;
   //user input
@@ -66,37 +69,40 @@ void extraExpenses() {
     cout << "D - Gym/Health" << endl;
     cout << "E - Transportation/Gas" << endl;
     cout << "F - Other" << endl;
-    cin >> extraExpense;
+    cin >> extraExpense;//user input for extra expenses
     switch(extraExpense) {
       case 'A':   cout << "Entertainment expense: ";
-                  cin >> entertainment;
+                  cin >> entertainment; //entertainment expense
                   break;
       case 'B':   cout  << "Food/Groceries expense: ";
-                  cin >> food;
+                  cin >> food;//food expense
                   break;
       case 'C':   cout << "Cell phone expense: ";
-                  cin >> cellphone;
+                  cin >> cellphone;//cell phone expense
                   break;
       case 'D':   cout << "Gym/Health expense: ";
-                  cin >> health;
+                  cin >> health;//health expense
                   break;
       case 'E':   cout << "Transportation/Gas expense: ";
-                  cin >> transportation;
+                  cin >> transportation;//tranpostation expense
                   break;
-      default:    cout << "Invalid response";
+      case 'F':   cout << "Other expense: ";
+                  cin >> other; //other expenses not on list
+                  break;
+      default:    cout << "Invalid response"; //all other inputs
     }
-    char additions;
+    char additions; //user input for additional expenses
     cout << "Are there more expenses? (Y/N): ";
-    cin >> additions;
-    if (additions == 'Y') { continue;}
+    cin >> additions; //user input from previous question
+    if (additions == 'Y') { continue;} //reloop
     else {
       cout << "Great all data has been taken";
-      break;
+      break; //end loop
     }
 }
-  else {
+  else { //Output if no other expenses are being added
     cout << "Great all data has been taken";
-    break;
+    break; // end loop
     }
   }
 }
