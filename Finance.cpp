@@ -96,12 +96,12 @@ double extraExpenses() {
     cin >> additions; //user input from previous question
     if (additions == 'Y') { continue;} //reloop
     else {
-      cout << "Great all data has been taken";
+      cout << "Great all data has been taken" << endl;
       break; //end loop
     }
 }
   else { //Output if no other expenses are being added
-    cout << "Great all data has been taken";
+    cout << "Great all data has been taken" << endl;
     break; // end loop
     }
   }
@@ -127,6 +127,7 @@ double calculate() {
 //function to print chart showing finance information
 void chart() {
   cout << "Distribution of Income" << endl;
+  cout << "-------------------------" << endl;
   cout << "Electric Bill" << setw(7) << electricBill << endl;
   cout << "Internet Bill" << setw(7) << internetBill << endl;
   cout << "Credit Card Bill" << setw(7) << creditCardBill << endl;
