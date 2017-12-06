@@ -32,6 +32,8 @@ double inputData () {
   //User input income
   cout << "Enter monthly average gross income: ";
   cin >> grossAverage;
+  cout << endl;
+  cout << endl;
   //User input bills
   cout << "Next we will enter bill information." << endl;
   cout << "Rent/Mortgage: ";
@@ -57,6 +59,7 @@ double extraExpenses() {
   //response variable
   char response;
   //user input
+  cout << endl << endl;
   cout << "Are there other monthly expenses you would like to add? (Y/N): ";
   cin >> response; //if else determined by input
   //If there are more responses user can choose from a number of categories
@@ -99,12 +102,12 @@ double extraExpenses() {
     cin >> additions; //user input from previous question
     if (additions == 'Y') { continue;} //reloop
     else {
-      cout << "Great all data has been taken";
+      cout << "Great all data has been taken" << endl << endl;
       break; //end loop
     }
 }
   else { //Output if no other expenses are being added
-    cout << "Great all data has been taken";
+    cout << "Great all data has been taken" << endl << endl;
     break; // end loop
     }
   }
