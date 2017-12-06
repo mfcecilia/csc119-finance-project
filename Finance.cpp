@@ -115,13 +115,13 @@ int calculate() {
   gasBill = (gasBill * 100) / grossAverage;
   carLoan = (carLoan * 100) / grossAverage;
   carInsurance = (carInsurance * 100) / grossAverage;
-  entertaiment = (entertaiment * 100) / grossAverage;
+  entertainment = (entertainment * 100) / grossAverage;
   food = (food * 100) / grossAverage;
   cellphone = (cellphone * 100) / grossAverage;
   health = (health * 100) / grossAverage;
   transportation = (transportation * 100) / grossAverage;
 
-  return electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertaiment, food, cellphone, health, transportation;
+  return electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
 }
 
 //function to print chart showing finance information
@@ -133,7 +133,7 @@ void chart() {
   cout << "Gas Bill" << setw(7) << gasBill << endl;
   cout << "Car Loan" << setw(7) << carLoan << endl;
   cout << "Car Insurance" << setw(7) << carInsurance << endl;
-  cout << "Entertainment" << setw(7) << entertaiment << endl;
+  cout << "Entertainment" << setw(7) << entertainment << endl;
   cout << "Food" << setw(7) << food << endl;
   cout << "Cellphone" << setw(7) << cellphone << endl;
   cout << "Health" << setw(7) << health << endl;
