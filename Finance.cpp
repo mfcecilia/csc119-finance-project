@@ -30,6 +30,18 @@ double other[] = {0.0, 0.0, 0.0}; //other expense not listed in list
 double totalMonthly = 0.0; //total monthly payments
 double totalPercentage = 0.0; //total percentage of income
 double totalAnnual = 0.0; //total annual cost
+double monthlyLeftover = 0.0; //total monthly income leftover after bill payments
+double annualLeftover = 0.0; //total annual income leftover after bill payments
+double vacationSavings[] = {0.0, 0.0, 0.0}; //amount to save for vacation
+double emergencySavings[] = {0.0, 0.0, 0.0}; //amount to save for emergencies
+double giftSavings[] = {0.0, 0.0, 0.0}; //amount to save for gifts
+double investmentSavings[] = {0.0, 0.0, 0.0}; //amount to save for investments
+double carSavings[] = {0.0, 0.0, 0.0}; //amount to save for new car
+double houseSavings[] = {0.0, 0.0, 0.0}; //amount to save for new house
+double otherSavigns[] = {0.0, 0.0, 0.0}; //amount to save for other goals
+double medicalSavings[] = {0.0, 0.0, 0.0}; //amount to save for medical bills
+double familySavings[] = {0.0, 0.0, 0.0}; //amount to save for family related expenses
+
 
 //Function for generic bills
 double inputData () {
@@ -244,10 +256,77 @@ char infoChart() {
   cout << left << setw(width) << setfill(separator) << totalMonthly;
   cout << left << setw(width) << setfill(separator) << totalPercentage;
   cout << left << setw(width) << setfill(separator) << totalAnnual << endl;
+  cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
 }
 
+//function to get savings goals
+double inputSavings() {
+  char response;
+
+  cout << "Do you want to calculate your potential savings?" << endl;
+  cin >> response; //if else determined by input
+  //If there are more responses user can choose from a number of categories
+  //Categories will then lead to input
+  while (response == 'Y' || response == 'N' || response == 'y' || response == 'n') { //categories visual
+    if (response == 'Y' || 'y') {
+    char savingsGoal;
+    cout << "Please choose a savings goal: " << endl; //Currently 5 options
+    cout << "--------------------------" << endl; //chart
+    cout << "A - Emergency Fund" << endl;
+    cout << "B - Vacation Fund" << endl;
+    cout << "C - Investment Fund" << endl;
+    cout << "D - Gift Fund" << endl;
+    cout << "E - Family Fund" << endl;
+    cout << "F - New Car Fund" << endl;
+    cout << "G - New House Fund" << endl;
+    cout << "H - Other Savings" << endl;
+    cin >> savingsGoal;//user input for extra expenses
+    switch(savingsGoal) {
+      case 'A':   cout << "Emergency Fund Goal: ";
+                  cin >> emergencySavings[0]; //emergency savings
+                  break;
+      case 'B':   cout  << "Vacation Fund Goal: ";
+                  cin >> vacationSavings[0]; //vacations savings
+                  break;
+      case 'C':   cout << "Investment Fund Goal: ";
+                  cin >> investmentSavings[0]; //investment savings
+                  break;
+      case 'D':   cout << "Gift Fund Goal: ";
+                  cin >> giftSavings[0]; //gift savings
+                  break;
+      case 'E':   cout << "Family Fund Goal: ";
+                  cin >> familySavings[0]; //family savings
+                  break;
+      case 'F':   cout << "New Car Fund Goal: ";
+                  cin >> carSavings[0]; //car savings
+                  break;
+      case 'G':   cout << "New House Fund Goal: ";
+                  cin >> houseSavings[0]; //house savings
+                  break;
+      case 'H':   cout << "Other Savings Goal: ";
+                  cin >> otherSavigns[0]; //other savings not on the list
+                  break;
+      default:    cout << "Invalid response"; //all other inputs
+    }
+    char additions; //user input for additional savings goals
+    cout << "Are there more expenses? (Y/N): ";
+    cin >> additions; //user input from previous question
+    if (additions == 'Y' || 'y') { continue;} //reloop
+    else {
+      cout << "Great all data has been taken" << endl;
+      break; //end loop
+    }
+}
+  else { //Output if no other savings goals are being added
+    cout << "Great all data has been taken" << endl;
+    break; // end loop
+    }
+  }
+}
+
+//function to calculate savings
 double calculateSavings() {
-  double monthlyLeftover = grossAverage - totalMonthly;
+  monthlyLeftover = grossAverage - totalMonthly;
 
   return monthlyLeftover;
 }
