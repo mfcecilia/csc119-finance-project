@@ -27,6 +27,9 @@ double cellphone[] = {0.0, 0.0, 0.0}; //cell phone expense
 double health[] = {0.0, 0.0, 0.0}; // health expense
 double transportation[] = {0.0, 0.0, 0.0}; // transportation expense
 double other[] = {0.0, 0.0, 0.0}; //other expense not listed in list
+double totalMonthly = 0.0; //total monthly payments
+double totalPercentage = 0.0; //total percentage of income
+double totalAnnual = 0.0; //total annual cost
 
 //Function for generic bills
 double inputData () {
@@ -161,10 +164,6 @@ double calculateAnnual() {
 
 //function to calculate totals for all values
 double calculateTotals() {
-  double totalMonthly = 0.0;
-  double totalPercentage = 0.0;
-  double totalAnnual = 0.0;
-
   totalMonthly = rent[0] + electricBill[0] + internetBill[0] + creditCardBill[0] + gasBill[0] + carLoan[0] + carInsurance[0] + entertainment[0] + food[0] + cellphone[0] + health[0] + transportation[0] + other[0];
 
   totalPercentage = rent[1] + electricBill[1] + internetBill[1] + creditCardBill[1] + gasBill[1] + carLoan[1] + carInsurance[1] + entertainment[1] + food[1] + cellphone[1] + health[1] + transportation[1] + other[1];
