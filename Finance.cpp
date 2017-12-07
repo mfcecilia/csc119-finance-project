@@ -198,9 +198,9 @@ char chart() {
   cout << "-------------------------------------------------------------------" << endl;
   for (int x = 0; x < bills.size(); x++) {
     //print chart
-    std::cout << prd(bills[x], 0, 10) << " | "
-      << prd(values[x][1], 2, 10) << " | "
-      << prd(values[x][2], 2, 10) << "\n";
+    std::cout << center(bills[x], 0, 10) << " | "
+      << center(values[x][1], 2, 10) << " | "
+      << center(values[x][2], 2, 10) << "\n";
   }
 }
 
