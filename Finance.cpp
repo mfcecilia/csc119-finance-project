@@ -82,7 +82,7 @@ double extraExpenses() {
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
   while (response == 'Y' || response == 'N') { //categories visual
-    if (response == 'Y' || 'y') {
+    if (response == 'Y') {
     char extraExpense;
     cout << "Please choose a category: " << endl; //Currently 5 options
     cout << "--------------------------" << endl; //chart
@@ -261,14 +261,14 @@ char infoChart() {
 
 //function to get savings goals
 double inputSavings() {
-  char response;
+  char answer;
 
   cout << "Do you want to calculate your potential savings?" << endl;
-  cin >> response; //if else determined by input
+  cin >> answer; //if else determined by input
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
-  while (response == 'Y' || response == 'N') { //categories visual
-    if (response == 'Y') {
+  while (answer == 'Y' || answer == 'N') { //categories visual
+    if (answer == 'Y') {
     char savingsGoal;
     cout << "Please choose a savings goal: " << endl; //Currently 5 options
     cout << "--------------------------" << endl; //chart
@@ -308,10 +308,10 @@ double inputSavings() {
                   break;
       default:    cout << "Invalid response"; //all other inputs
     }
-    char additions; //user input for additional savings goals
+    char extras; //user input for additional savings goals
     cout << "Are there more expenses? (Y/N): ";
-    cin >> additions; //user input from previous question
-    if (additions == 'Y') { continue;} //reloop
+    cin >> extras; //user input from previous question
+    if (extras == 'Y') { continue;} //reloop
     else {
       cout << "Great all data has been taken" << endl;
       break; //end loop
