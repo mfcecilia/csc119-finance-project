@@ -245,6 +245,7 @@ int main() {
   extraExpenses();
   calculatePercent();
   calculateAnnual();
+  calculateTotals();
   chart();
   return 0;
 }
