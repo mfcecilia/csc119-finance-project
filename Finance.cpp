@@ -161,11 +161,17 @@ double calculateAnnual() {
 
 //function to calculate totals for all values
 double calculateTotals() {
-  double totalMonthly = 0;
-  double totalPercentage = 0;
-  double totalAnnual = 0;
+  double totalMonthly = 0.0;
+  double totalPercentage = 0.0;
+  double totalAnnual = 0.0;
 
   totalMonthly = rent[0] + electricBill[0] + internetBill[0] + creditCardBill[0] + gasBill[0] + carLoan[0] + carInsurance[0] + entertainment[0] + food[0] + cellphone[0] + health[0] + transportation[0] + other[0];
+
+  totalPercentage = rent[1] + electricBill[1] + internetBill[1] + creditCardBill[1] + gasBill[1] + carLoan[1] + carInsurance[1] + entertainment[1] + food[1] + cellphone[1] + health[1] + transportation[1] + other[1];
+
+  totalAnnual = rent[2] + electricBill[2] + internetBill[2] + creditCardBill[2] + gasBill[2] + carLoan[2] + carInsurance[2] + entertainment[2] + food[2] + cellphone[2] + health[2] + transportation[2] + other[2];
+
+  return totalMonthly, totalPercentage, totalAnnual;
 }
 
 //function to print chart showing finance information
