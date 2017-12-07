@@ -69,8 +69,8 @@ double extraExpenses() {
   cin >> response; //if else determined by input
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
-  while (response == 'Y' || response == 'N') { //categories visual
-    if (response == 'Y') {
+  while (response == 'Y' || response == 'N' || response == 'y' || response == 'n') { //categories visual
+    if (response == 'Y' || 'y') {
     char extraExpense;
     cout << "Please choose a category: " << endl; //Currently 5 options
     cout << "--------------------------" << endl; //chart
@@ -105,7 +105,7 @@ double extraExpenses() {
     char additions; //user input for additional expenses
     cout << "Are there more expenses? (Y/N): ";
     cin >> additions; //user input from previous question
-    if (additions == 'Y') { continue;} //reloop
+    if (additions == 'Y' || 'y') { continue;} //reloop
     else {
       cout << "Great all data has been taken" << endl;
       break; //end loop
@@ -174,10 +174,11 @@ double calculateTotals() {
 }
 
 //function to print chart showing finance information
-char chart() {
+char infoChart() {
   const int width = 30; //spacing for chart values
   const char separator = ' '; //spacing
 
+  cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
   cout << "Distribution of Income" << endl; //title of chart
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
   //Title of bill followed by percent income and then total annual cost
@@ -245,12 +246,17 @@ char chart() {
   cout << left << setw(width) << setfill(separator) << totalAnnual << endl;
 }
 
+//function to display chart of potential savings
+char savingsChart() {
+
+}
+
 int main() {
   inputData();
   extraExpenses();
   calculatePercent();
   calculateAnnual();
   calculateTotals();
-  chart();
+  infoChart();
   return 0;
 }
