@@ -158,14 +158,17 @@ char chart() {
   const char separator = ' ';
 
   cout << "Distribution of Income" << endl;
-  cout << "-------------------------------------------------------------------" << endl;
+  cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
   cout << left << setw(nameWidth) << setfill(separator) << "Bill";
   cout << left << setw(nameWidth) << setfill(separator) << "Percent of Income";
   cout << left << setw(nameWidth) << setfill(separator) << "Total Annual Cost" << endl;
-  cout << "-------------------------------------------------------------------" << endl;
+  cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
   cout << left << setw(nameWidth) << setfill(separator) << "Rent/Mortgage";
   cout << left << setw(numWidth) << setfill(separator) << rent[1];
   cout << left << setw(numWidth) << setfill(separator) << rent[2] << endl;
+  cout << left << setw(nameWidth) << setfill(separator) << "Electric Bill";
+  cout << left << setw(numWidth) << setfill(separator) << electricBill[1];
+  cout << left << setw(numWidth) << setfill(separator) << electricBill[2] << endl;
 }
 
 int main() {
