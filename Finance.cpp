@@ -32,26 +32,27 @@ double other[] = {0.0, 0.0, 0.0}; //other expense not listed in list
 double inputData () {
   //User input income
   cout << "Enter monthly average gross income: ";
-  cin >> grossAverage;
+  cin >> grossAverage; //Monthly average
   cout << endl;
   cout << endl;
   //User input bills
   cout << "Next we will enter bill information." << endl;
   cout << "Rent/Mortgage: ";
-  cin >> rent[0];
+  cin >> rent[0]; //rent first double of array
   cout << "Electric bill: ";
-  cin >> electricBill[0];
+  cin >> electricBill[0]; // electric first double in array
   cout << "Internet bill: ";
-  cin >> internetBill[0];
+  cin >> internetBill[0]; // internet first double in array
   cout << "Gas bill: ";
-  cin >> gasBill[0];
+  cin >> gasBill[0];// gas bill first double in array
   cout << "Credit card bill: ";
-  cin >> creditCardBill[0];
+  cin >> creditCardBill[0]; //credit card bill first double in array
   cout << "Car loan: ";
-  cin >> carLoan[0];
+  cin >> carLoan[0]; // car loan first double in array
   cout<< "Car Insurance: ";
-  cin >> carInsurance[0];
+  cin >> carInsurance[0]; // car Insurance first double in array
   //Return all values in order to make them usable in future functions
+  // Using all first numbers of arrays
   return grossAverage, rent[0], electricBill[0], internetBill[0], gasBill[0], creditCardBill[0], carLoan[0], carInsurance[0];
 }
 
@@ -116,94 +117,116 @@ double extraExpenses() {
 
 //function to calculate percentage of income for each bill
 double calculatePercent() {
-  double percent = 100;
-  rent[1] = (rent[0] * percent) / grossAverage;
-  electricBill[1] = (electricBill[0] * percent) / grossAverage;
-  internetBill[1] = (internetBill[0] * percent) / grossAverage;
-  creditCardBill[1] = (creditCardBill[0] * percent) / grossAverage;
-  gasBill[1] = (gasBill[0] * percent) / grossAverage;
-  carLoan[1] = (carLoan[0] * percent) / grossAverage;
-  carInsurance[1] = (carInsurance[0] * percent) / grossAverage;
-  entertainment[1] = (entertainment[0] * percent) / grossAverage;
-  food[1] = (food[0] * percent) / grossAverage;
-  cellphone[1] = (cellphone[0] * percent) / grossAverage;
-  health[1] = (health[0] * percent) / grossAverage;
-  transportation[1] = (transportation[0] * percent) / grossAverage;
-  other[1] = (other[0] * percent) / grossAverage;
+  double percent = 100; //Multiply by 100 for percent
+  rent[1] = (rent[0] * percent) / grossAverage; //rent percent
+  electricBill[1] = (electricBill[0] * percent) / grossAverage; //electric percent
+  internetBill[1] = (internetBill[0] * percent) / grossAverage; // internet percent
+  creditCardBill[1] = (creditCardBill[0] * percent) / grossAverage; // credit card percent
+  gasBill[1] = (gasBill[0] * percent) / grossAverage; // gas percent
+  carLoan[1] = (carLoan[0] * percent) / grossAverage; // car loan percent
+  carInsurance[1] = (carInsurance[0] * percent) / grossAverage;// car insurance percent
+  entertainment[1] = (entertainment[0] * percent) / grossAverage; // entertainment percent
+  food[1] = (food[0] * percent) / grossAverage; // food expenses percent
+  cellphone[1] = (cellphone[0] * percent) / grossAverage; //cell phone percent
+  health[1] = (health[0] * percent) / grossAverage;//health percent
+  transportation[1] = (transportation[0] * percent) / grossAverage; //transportation percent
+  other[1] = (other[0] * percent) / grossAverage; //other percent
 
+  //Return all values in order to make them usable in future functions
+  // Using all second numbers of arrays
   return rent[1], electricBill[1], internetBill[1], creditCardBill[1], gasBill[1], carLoan[1], carInsurance[1], entertainment[1], food[1], cellphone[1], health[1], transportation[1];
 }
 
 //function to calculate annual amount spent on those bills
 double calculateAnnual() {
-  double months = 12;
-  rent[2] = rent[0] * months;
-  electricBill[2] = electricBill[0] * months;
-  internetBill[2] = internetBill[0] * months;
-  creditCardBill[2] = creditCardBill[0] * months;
-  gasBill[2] = gasBill[0] * months;
-  carLoan[2] = carLoan[0] * months;
-  carInsurance[2] = carInsurance[0] * months;
-  entertainment[2] = entertainment[0] * months;
-  food[2] = food[0] * months;
-  cellphone[2] = cellphone[0] * months;
-  health[2] = health[0] * months;
-  transportation[2] = transportation[0] * months;
-  other[2] = other[0] * months;
+  double months = 12; //number of months in a year
+  rent[2] = rent[0] * months; //rent annual spent
+  electricBill[2] = electricBill[0] * months; //electric annual spent
+  internetBill[2] = internetBill[0] * months;//internet annual spent
+  creditCardBill[2] = creditCardBill[0] * months;//credit card annual spent
+  gasBill[2] = gasBill[0] * months; //gas annual spent
+  carLoan[2] = carLoan[0] * months; //car loan annual spent
+  carInsurance[2] = carInsurance[0] * months;//car insurane annual spent
+  entertainment[2] = entertainment[0] * months; //entertainment annual spent
+  food[2] = food[0] * months; //food annual spent
+  cellphone[2] = cellphone[0] * months; //cellphone annual spent
+  health[2] = health[0] * months; //health annual spent
+  transportation[2] = transportation[0] * months; //transportation annual spent
+  other[2] = other[0] * months; //other annual spent
+
+  //Return all values in order to make them usable in future functions
+  // Using all third numbers of arrays
   return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
 //function to print chart showing finance information
 char chart() {
-  const int nameWidth = 50;
-  const int numWidth = 50;
-  const char separator = ' ';
+  const int nameWidth = 30; //spacing for names
+  const int numWidth = 30; //spacing for number values
+  const char separator = ' '; //spacing
 
-  cout << "Distribution of Income" << endl;
+  cout << "Distribution of Income" << endl; //title of chart
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
+  //Title of bill followed by percent income and then total annual cost
   cout << left << setw(nameWidth) << setfill(separator) << "Bill";
+  cout << left << setw(nameWidth) << setfill(separator) << "Monthly Payment";
   cout << left << setw(nameWidth) << setfill(separator) << "Percent of Income";
   cout << left << setw(nameWidth) << setfill(separator) << "Total Annual Cost" << endl;
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
+  //All information properly spaced using array values
   cout << left << setw(nameWidth) << setfill(separator) << "Rent/Mortgage";
+  cout << left << setw(numWidth) << setfill(separator) << rent[0];
   cout << left << setw(numWidth) << setfill(separator) << rent[1];
   cout << left << setw(numWidth) << setfill(separator) << rent[2] << endl;
   cout << left << setw(nameWidth) << setfill(separator) << "Electric Bill";
+  cout << left << setw(numWidth) << setfill(separator) << electricBill[0];
   cout << left << setw(numWidth) << setfill(separator) << electricBill[1];
   cout << left << setw(numWidth) << setfill(separator) << electricBill[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Internet Bill";
+  cout << left << setw(numWidth) << setfill(separator) << internetBill[0];
   cout << left << setw(numWidth) << setfill(separator) << internetBill[1];
   cout << left << setw(numWidth) << setfill(separator) << internetBill[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Gas Bill";
+  cout << left << setw(numWidth) << setfill(separator) << gasBill[0];
   cout << left << setw(numWidth) << setfill(separator) << gasBill[1];
   cout << left << setw(numWidth) << setfill(separator) << gasBill[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Credit Card Bill";
+  cout << left << setw(numWidth) << setfill(separator) << creditCardBill[0];
   cout << left << setw(numWidth) << setfill(separator) << creditCardBill[1];
-  cout << left << setw(numWidth) << setfill(separator) <<creditCardBill[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << creditCardBill[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Car Payment";
+  cout << left << setw(numWidth) << setfill(separator) << carLoan[0];
   cout << left << setw(numWidth) << setfill(separator) << carLoan[1];
   cout << left << setw(numWidth) << setfill(separator) << carLoan[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Car Insurance";
+  cout << left << setw(numWidth) << setfill(separator) << carInsurance[0];
   cout << left << setw(numWidth) << setfill(separator) << carInsurance[1];
   cout << left << setw(numWidth) << setfill(separator) << carInsurance[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Entertainment Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << entertainment[0];
   cout << left << setw(numWidth) << setfill(separator) << entertainment[1];
   cout << left << setw(numWidth) << setfill(separator) << entertainment[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Food Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << food[0];
   cout << left << setw(numWidth) << setfill(separator) << food[1];
   cout << left << setw(numWidth) << setfill(separator) << food[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Cell Phone Bill";
+  cout << left << setw(numWidth) << setfill(separator) << cellphone[0];
   cout << left << setw(numWidth) << setfill(separator) << cellphone[1];
   cout << left << setw(numWidth) << setfill(separator) << cellphone[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Health Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << health[0];
   cout << left << setw(numWidth) << setfill(separator) << health[1];
   cout << left << setw(numWidth) << setfill(separator) << health[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Transportation expenses";
+  cout << left << setw(numWidth) << setfill(separator) << transportation[0];
   cout << left << setw(numWidth) << setfill(separator) << transportation[1];
   cout << left << setw(numWidth) << setfill(separator) << transportation[2] << endl;
   cout << left << setw(numWidth) << setfill(separator) << "Other expenses";
+  cout << left << setw(numWidth) << setfill(separator) << other[0];
   cout << left << setw(numWidth) << setfill(separator) << other[1];
-  cout << left << setw(numWidth) << setfill(separator) << other[2];
+  cout << left << setw(numWidth) << setfill(separator) << other[2] << endl << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Total";
 }
 
 int main() {
