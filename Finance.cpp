@@ -179,7 +179,7 @@ char infoChart() {
   const char separator = ' '; //spacing
 
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
-  cout << "Distribution of Income" << endl; //title of chart
+  cout << "Distribution of Income: " << grossAverage << endl; //title of chart
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
   //Title of bill followed by percent income and then total annual cost
   cout << left << setw(width) << setfill(separator) << "Bill";
@@ -244,6 +244,12 @@ char infoChart() {
   cout << left << setw(width) << setfill(separator) << totalMonthly;
   cout << left << setw(width) << setfill(separator) << totalPercentage;
   cout << left << setw(width) << setfill(separator) << totalAnnual << endl;
+}
+
+double calculateSavings() {
+  double monthlyLeftover = grossAverage - totalMonthly;
+
+  return monthlyLeftover;
 }
 
 //function to display chart of potential savings
