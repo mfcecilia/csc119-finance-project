@@ -185,7 +185,7 @@ std::string center(const string s, const int w) {
 
 //function to print chart showing finance information
 char chart() {
-  char bills[12] = {"Rent/Mortgage", "Electric Bill", "Internet Bill", "Credit Card Bill", "Gas Bill", "Car Loan", "Car Insurance", "Entertainment", "Food", "Cellphone", "Health", "Transportation"};
+  char* bills[12] = {"Rent/Mortgage", "Electric Bill", "Internet Bill", "Credit Card Bill", "Gas Bill", "Car Loan", "Car Insurance", "Entertainment", "Food", "Cellphone", "Health", "Transportation"};
   char values[12][3] = {rent[], electricBill[], internetBill[], creditCardBill[], gasBill[], carLoan[], carInsurance[], entertainment[], food[], cellphone[], health[], transportation[]};
   const char separator = '    ';
   const int nameWidth = 6;
