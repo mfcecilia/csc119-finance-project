@@ -151,57 +151,21 @@ double calculateAnnual() {
   return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
-//function to convert double to string with specified number of places after the decimal.
-char prd(const double x, const int decDigits) {
-    std::stringstream ss;
-    ss << fixed;
-    ss.precision(decDigits); // set # places after decimal
-    ss << x;
-    return ss.str();
-}
-
-//function to convert double to string with specified number of places after the decimal and left padding.
-char prd(const double x, const int decDigits, const int width) {
-    std::stringstream ss;
-    ss << fixed << right;
-    ss.fill(' ');        // fill space around displayed #
-    ss.width(width);     // set  width around displayed #
-    ss.precision(decDigits); // set # places after decimal
-    ss << x;
-    return ss.str();
-}
-
-//function to center-align strings and add padding
-char center(const string s, const int w) {
-  std::stringstream ss, spaces;
-  int padding = w - s.size();
-  for (int i = 0; i < padding/2; ++i)
-    spaces << " ";
-  ss << spaces.str() << s << spaces.str();
-  if (padding > 0 && padding%2 != 0)
-    ss << " ";
-  return ss.str();
-}
-
 //function to print chart showing finance information
 char chart() {
-  char* bills[12] = {"Rent/Mortgage", "Electric Bill", "Internet Bill", "Credit Card Bill", "Gas Bill", "Car Loan", "Car Insurance", "Entertainment", "Food", "Cellphone", "Health", "Transportation"};
-  char values[12][3] = {rent[], electricBill[], internetBill[], creditCardBill[], gasBill[], carLoan[], carInsurance[], entertainment[], food[], cellphone[], health[], transportation[]};
-  const char separator = '    ';
-  const int nameWidth = 6;
-  const int numWidth = 8;
+  const int nameWidth = 50;
+  const int numWidth = 50;
+  const char separator = ' ';
+
   cout << "Distribution of Income" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  cout << center("Bill", 10) << " | "
-    << center("Percent of Income", 10) << " | "
-    << center("Total Annual Cost", 10) << "\n";
+  cout << left << setw(nameWidth) << setfill(separator) << "Bill";
+  cout << left << setw(nameWidth) << setfill(separator) << "Percent of Income";
+  cout << left << setw(nameWidth) << setfill(separator) << "Total Annual Cost" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  for (int x = 0; x < 12; x++) {
-    //print chart
-    std::cout << center(bills[x], 0, 10) << " | "
-      << center(values[x][1], 2, 10) << " | "
-      << center(values[x][2], 2, 10) << "\n";
-  }
+  cout << left << setw(nameWidth) << setfill(separator) << "Rent/Mortgage";
+  cout << left << setw(numWidth) << setfill(separator) << rent[1];
+  cout << left << setw(numWidth) << setfill(separator) << rent[2] << endl;
 }
 
 int main() {
