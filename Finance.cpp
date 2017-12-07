@@ -159,6 +159,14 @@ double calculateAnnual() {
   return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
+double calculateTotals() {
+  double totalMonthly = 0;
+  double totalPercentage = 0;
+  double totalAnnual = 0;
+
+  totalMonthly = rent[0] + electricBill[0] + internetBill[0] + creditCardBill[0] + gasBill[0] + carLoan[0] + carInsurance[0] + entertainment[0] + food[0] + cellphone[0] +
+}
+
 //function to print chart showing finance information
 char chart() {
   const int nameWidth = 30; //spacing for names
