@@ -156,18 +156,18 @@ char chart() {
   cout << "-------------------------------------------------------------------" << endl;
   cout << "Bill      "<<"    Percent of Income     " << "   Annual Cost" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  cout << "Rent/Mortgage" << setw(7)<< rent[1] << rent[2] << endl;
-  cout << "Electric Bill" << setw(7) << electricBill[1] << electricBill[2] << endl;
-  cout << "Internet Bill" << setw(7) << internetBill[1] << internetBill[2] << endl;
-  cout << "Credit Card Bill" << setw(7) << creditCardBill[1] << creditCardBill[2] << endl;
-  cout << "Gas Bill" << setw(7) << gasBill[1] << gasBill[2] << endl;
-  cout << "Car Loan" << setw(7) << carLoan[1] << carLoan[2] << endl;
-  cout << "Car Insurance" << setw(7) << carInsurance[1] << carInsurance[2] << endl;
-  cout << "Entertainment" << setw(7) << entertainment[1] << entertainment[2] << endl;
-  cout << "Food" << setw(7) << food[1] << food[2] << endl;
-  cout << "Cellphone" << setw(7) << cellphone[1] << cellphone[2] << endl;
-  cout << "Health" << setw(7) << health[1] << health[2] << endl;
-  cout << "Transportation" << setw(7) << transportation[2] << transportation[2] << endl;
+  cout << "Rent/Mortgage" << setw(7) << rent[1] << setw(7) << rent[2] << endl;
+  cout << "Electric Bill" << setw(7) << electricBill[1] << setw(7) << electricBill[2] << endl;
+  cout << "Internet Bill" << setw(7) << internetBill[1] << setw(7) << internetBill[2] << endl;
+  cout << "Credit Card Bill" << setw(7) << creditCardBill[1] << setw(7) << creditCardBill[2] << endl;
+  cout << "Gas Bill" << setw(7) << gasBill[1] << setw(7) << gasBill[2] << endl;
+  cout << "Car Loan" << setw(7) << carLoan[1] << setw(7) << carLoan[2] << endl;
+  cout << "Car Insurance" << setw(7) << carInsurance[1] << setw(7) << carInsurance[2] << endl;
+  cout << "Entertainment" << setw(7) << entertainment[1] << setw(7) << entertainment[2] << endl;
+  cout << "Food" << setw(7) << food[1] << setw(7) << food[2] << endl;
+  cout << "Cellphone" << setw(7) << cellphone[1] << setw(7) << cellphone[2] << endl;
+  cout << "Health" << setw(7) << health[1] << setw(7) << health[2] << endl;
+  cout << "Transportation" << setw(7) << transportation[1] << setw(7) << transportation[2] << endl;
 }
 
 int main() {
