@@ -152,7 +152,7 @@ double calculateAnnual() {
 }
 
 //function to convert double to string with specified number of places after the decimal.
-std::string prd(const double x, const int decDigits) {
+char prd(const double x, const int decDigits) {
     std::stringstream ss;
     ss << fixed;
     ss.precision(decDigits); // set # places after decimal
@@ -161,7 +161,7 @@ std::string prd(const double x, const int decDigits) {
 }
 
 //function to convert double to string with specified number of places after the decimal and left padding.
-std::string prd(const double x, const int decDigits, const int width) {
+char prd(const double x, const int decDigits, const int width) {
     std::stringstream ss;
     ss << fixed << right;
     ss.fill(' ');        // fill space around displayed #
@@ -172,7 +172,7 @@ std::string prd(const double x, const int decDigits, const int width) {
 }
 
 //function to center-align strings and add padding
-std::string center(const string s, const int w) {
+char center(const string s, const int w) {
   std::stringstream ss, spaces;
   int padding = w - s.size();
   for (int i = 0; i < padding/2; ++i)
@@ -192,13 +192,13 @@ char chart() {
   const int numWidth = 8;
   cout << "Distribution of Income" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  std::cout << center("Bill", 10) << " | "
+  cout << center("Bill", 10) << " | "
     << center("Percent of Income", 10) << " | "
     << center("Total Annual Cost", 10) << "\n";
   cout << "-------------------------------------------------------------------" << endl;
-  for (int x = 0; x < bills.size(); x++) {
+  for (int x = 0; x < 12; x++) {
     //print chart
-    std::cout << prd(bills[x], 0, 10) << " | "
+    cout << prd(bills[x], 0, 10) << " | "
       << prd(values[x][1], 2, 10) << " | "
       << prd(values[x][2], 2, 10) << "\n";
   }
