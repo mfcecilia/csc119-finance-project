@@ -81,7 +81,7 @@ double extraExpenses() {
   cin >> response; //if else determined by input
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
-  while (response == 'Y' || response == 'N' || response == 'y' || response == 'n') { //categories visual
+  while (response == 'Y' || response == 'N') { //categories visual
     if (response == 'Y' || 'y') {
     char extraExpense;
     cout << "Please choose a category: " << endl; //Currently 5 options
@@ -117,7 +117,7 @@ double extraExpenses() {
     char additions; //user input for additional expenses
     cout << "Are there more expenses? (Y/N): ";
     cin >> additions; //user input from previous question
-    if (additions == 'Y' || 'y') { continue;} //reloop
+    if (additions == 'Y') { continue;} //reloop
     else {
       cout << "Great all data has been taken" << endl;
       break; //end loop
@@ -267,8 +267,8 @@ double inputSavings() {
   cin >> response; //if else determined by input
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
-  while (response == 'Y' || response == 'N' || response == 'y' || response == 'n') { //categories visual
-    if (response == 'Y' || 'y') {
+  while (response == 'Y' || response == 'N') { //categories visual
+    if (response == 'Y') {
     char savingsGoal;
     cout << "Please choose a savings goal: " << endl; //Currently 5 options
     cout << "--------------------------" << endl; //chart
@@ -311,7 +311,7 @@ double inputSavings() {
     char additions; //user input for additional savings goals
     cout << "Are there more expenses? (Y/N): ";
     cin >> additions; //user input from previous question
-    if (additions == 'Y' || 'y') { continue;} //reloop
+    if (additions == 'Y') { continue;} //reloop
     else {
       cout << "Great all data has been taken" << endl;
       break; //end loop
@@ -343,5 +343,6 @@ int main() {
   calculateAnnual();
   calculateTotals();
   infoChart();
+  inputSavings();
   return 0;
 }
