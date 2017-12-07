@@ -12,20 +12,20 @@ Working on outliers that may skew data
 using namespace std;
 
 //Global variables
-double grossAverage; //monthly income variable
-double rent[3];
-double electricBill[3]; //electric bill due
-double internetBill[3]; //internet bill due
-double creditCardBill[3]; //credit card bill due
-double gasBill[3]; //gas bill due
-double carLoan[3]; //car payment due
-double carInsurance[3]; // car insurance bill due
-double entertainment[3];//entertaiment expense
-double food[3]; //food expense
-double cellphone[3]; //cell phone expense
-double health[3]; // health expense
-double transportation[3]; // transportation expense
-double other[3]; //other expense not listed in list
+double grossAverage = 0; //monthly income variable
+double rent[] = {0.0, 0.0, 0.0};
+double electricBill[] = {0.0, 0.0, 0.0}; //electric bill due
+double internetBill[] = {0.0, 0.0, 0.0}; //internet bill due
+double creditCardBill[] = {0.0, 0.0, 0.0}; //credit card bill due
+double gasBill[] = {0.0, 0.0, 0.0}; //gas bill due
+double carLoan[] = {0.0, 0.0, 0.0}; //car payment due
+double carInsurance[] = {0.0, 0.0, 0.0}; // car insurance bill due
+double entertainment[] = {0.0, 0.0, 0.0};//entertaiment expense
+double food[] = {0.0, 0.0, 0.0}; //food expense
+double cellphone[] = {0.0, 0.0, 0.0}; //cell phone expense
+double health[] = {0.0, 0.0, 0.0}; // health expense
+double transportation[] = {0.0, 0.0, 0.0}; // transportation expense
+double other[] = {0.0, 0.0, 0.0}; //other expense not listed in list
 
 //Function for generic bills
 double inputData () {
@@ -51,7 +51,7 @@ double inputData () {
   cout<< "Car Insurance: ";
   cin >> carInsurance[0];
   //Return all values in order to make them usable in future functions
-  return grossAverage, rent, electricBill, internetBill, gasBill, creditCardBill, carLoan, carInsurance;
+  return grossAverage, rent[0], electricBill[0], internetBill[0], gasBill[0], creditCardBill[0], carLoan[0], carInsurance[0];
 }
 
 //Function for extra bills/expenses
@@ -115,41 +115,43 @@ double extraExpenses() {
 
 //function to calculate percentage of income for each bill
 double calculatePercent() {
-  rent[1] = (rent[0] * 100) / grossAverage;
-  electricBill[1] = (electricBill[0] * 100) / grossAverage;
-  internetBill[1] = (internetBill[0] * 100) / grossAverage;
-  creditCardBill[1] = (creditCardBill[0] * 100) / grossAverage;
-  gasBill[1] = (gasBill[0] * 100) / grossAverage;
-  carLoan[1] = (carLoan[0] * 100) / grossAverage;
-  carInsurance[1] = (carInsurance[0] * 100) / grossAverage;
-  entertainment[1] = (entertainment[0] * 100) / grossAverage;
-  food[1] = (food[0] * 100) / grossAverage;
-  cellphone[1] = (cellphone[0] * 100) / grossAverage;
-  health[1] = (health[0] * 100) / grossAverage;
-  transportation[1] = (transportation[0] * 100) / grossAverage;
+  double percent = 100;
+  rent[1] = (rent[0] * percent) / grossAverage;
+  electricBill[1] = (electricBill[0] * percent) / grossAverage;
+  internetBill[1] = (internetBill[0] * percent) / grossAverage;
+  creditCardBill[1] = (creditCardBill[0] * percent) / grossAverage;
+  gasBill[1] = (gasBill[0] * percent) / grossAverage;
+  carLoan[1] = (carLoan[0] * percent) / grossAverage;
+  carInsurance[1] = (carInsurance[0] * percent) / grossAverage;
+  entertainment[1] = (entertainment[0] * percent) / grossAverage;
+  food[1] = (food[0] * percent) / grossAverage;
+  cellphone[1] = (cellphone[0] * percent) / grossAverage;
+  health[1] = (health[0] * percent) / grossAverage;
+  transportation[1] = (transportation[0] * percent) / grossAverage;
 
-  return rent, electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+  return rent[1], electricBill[1], internetBill[1], creditCardBill[1], gasBill[1], carLoan[1], carInsurance[1], entertainment[1], food[1], cellphone[1], health[1], transportation[1];
 }
 
 //function to calculate annual amount spent on those bills
 double calculateAnnual() {
-  rent[2] = rent[0] * 12;
-  electricBill[2] = electricBill[0] * 12;
-  internetBill[2] = internetBill[0] * 12;
-  creditCardBill[2] = creditCardBill[0] * 12;
-  gasBill[2] = gasBill[0] * 12;
-  carLoan[2] = carLoan[0] * 12;
-  carInsurance[2] = carInsurance[0] * 12;
-  entertainment[2] = entertainment[0] * 12;
-  food[2] = food[0] * 12;
-  cellphone[2] = cellphone[0] * 12;
-  health[2] = health[0] * 12;
-  transportation[2] = transportation[0] * 12;
-  return rent, electricBill, internetBill, creditCardBill, gasBill, carLoan, carInsurance, entertainment, food, cellphone, health, transportation;
+  double months = 12;
+  rent[2] = rent[0] * months;
+  electricBill[2] = electricBill[0] * months;
+  internetBill[2] = internetBill[0] * months;
+  creditCardBill[2] = creditCardBill[0] * months;
+  gasBill[2] = gasBill[0] * months;
+  carLoan[2] = carLoan[0] * months;
+  carInsurance[2] = carInsurance[0] * months;
+  entertainment[2] = entertainment[0] * months;
+  food[2] = food[0] * months;
+  cellphone[2] = cellphone[0] * months;
+  health[2] = health[0] * months;
+  transportation[2] = transportation[0] * months;
+  return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
 //function to print chart showing finance information
-void chart() {
+char chart() {
   cout << "Distribution of Income" << endl;
   cout << "-------------------------------------------------------------------" << endl;
   cout << "Bill      "<<"    Percent of Income     " << "   Annual Cost" << endl;
@@ -171,7 +173,8 @@ void chart() {
 int main() {
   inputData();
   extraExpenses();
-  calculate();
+  calculatePercent();
+  calculateAnnual();
   chart();
   return 0;
 }
