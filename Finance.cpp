@@ -257,13 +257,16 @@ char infoChart() {
   cout << left << setw(width) << setfill(separator) << totalPercentage;
   cout << left << setw(width) << setfill(separator) << totalAnnual << endl;
   cout << "-------------------------------------------------------------------------------------------------------------------------" << endl;
+  cout << endl << endl;
 }
 
 //function to get savings goals
 double inputSavings() {
   char answer;
-
-  cout << "Do you want to calculate your potential savings? (Y/N): "
+  double allocation = grossAverage - totalMonthly;
+  cout << "You have " << allocation << " to allocate towards savings." << endl << endl;
+  cout << "Do you want to calculate how long it will take to save up for a savings fund? (Y/N): ";
+  cin >> answer;
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
   while (answer == 'Y' || answer == 'N') { //categories visual
