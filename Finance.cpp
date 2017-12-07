@@ -181,7 +181,6 @@ std::string center(const string s, const int w) {
   if (padding > 0 && padding%2 != 0)
     ss << " ";
   return ss.str();
-  }
 }
 
 //function to print chart showing finance information
