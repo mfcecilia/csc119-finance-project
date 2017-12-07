@@ -9,6 +9,7 @@ Working on outliers that may skew data
 #include <string>
 #include <stdlib.h>
 #include <stdio.h>
+#include <sstream>
 using namespace std;
 
 //Global variables
@@ -152,7 +153,7 @@ double calculateAnnual() {
 
 //function to convert double to string with specified number of places after the decimal.
 std::string prd(const double x, const int decDigits) {
-    stringstream ss;
+    std::stringstream ss;
     ss << fixed;
     ss.precision(decDigits); // set # places after decimal
     ss << x;
@@ -161,7 +162,7 @@ std::string prd(const double x, const int decDigits) {
 
 //function to convert double to string with specified number of places after the decimal and left padding.
 std::string prd(const double x, const int decDigits, const int width) {
-    stringstream ss;
+    std::stringstream ss;
     ss << fixed << right;
     ss.fill(' ');        // fill space around displayed #
     ss.width(width);     // set  width around displayed #
@@ -172,7 +173,7 @@ std::string prd(const double x, const int decDigits, const int width) {
 
 //function to center-align strings and add padding
 std::string center(const string s, const int w) {
-  stringstream ss, sapces;
+  std::stringstream ss, spaces;
   int padding = w - s.size();
   for (int i = 0; i < padding/2; ++i)
     spaces << " ";
