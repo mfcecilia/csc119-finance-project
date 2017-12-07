@@ -263,8 +263,7 @@ char infoChart() {
 double inputSavings() {
   char answer;
 
-  cout << "Do you want to calculate your potential savings?" << endl;
-  cin >> answer; //if else determined by input
+  cout << "Do you want to calculate your potential savings? (Y/N): "
   //If there are more responses user can choose from a number of categories
   //Categories will then lead to input
   while (answer == 'Y' || answer == 'N') { //categories visual
@@ -309,7 +308,7 @@ double inputSavings() {
       default:    cout << "Invalid response"; //all other inputs
     }
     char extras; //user input for additional savings goals
-    cout << "Are there more expenses? (Y/N): ";
+    cout << "Are there more savings goals? (Y/N): ";
     cin >> extras; //user input from previous question
     if (extras == 'Y') { continue;} //reloop
     else {
