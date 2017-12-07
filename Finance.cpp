@@ -150,15 +150,55 @@ double calculateAnnual() {
   return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
+//function to convert double to string with specified number of places after the decimal.
+std::string prd(const double x, const int decDigits) {
+    stringstream ss;
+    ss << fixed;
+    ss.precision(decDigits); // set # places after decimal
+    ss << x;
+    return ss.str();
+}
+
+//function to convert double to string with specified number of places after the decimal and left padding.
+std::string prd(const double x, const int decDigits, const int width) {
+    stringstream ss;
+    ss << fixed << right;
+    ss.fill(' ');        // fill space around displayed #
+    ss.width(width);     // set  width around displayed #
+    ss.precision(decDigits); // set # places after decimal
+    ss << x;
+    return ss.str();
+}
+
+//function to center-align strings and add padding
+std::string center(const string s, const int w) {
+  stringstream ss, sapces;
+  int padding = w - s.size();
+  for (int i = 0; i < padding/2; ++i)
+    spaces << " ";
+  ss << spaces.str() << s << spaces.str();
+  if (padding > 0 && padding%2 != 0)
+    ss << " ";
+  return ss.str();
+  }
+}
+
 //function to print chart showing finance information
 char chart() {
+  char bills[][] = {"Rent/Mortgage", "Electric Bill", "Internet Bill", "Credit Card Bill", "Gas Bill", "Car Loan", "Car Insurance", "Entertainment", "Food", "Cellphone", "Health", "Transportation"};
   const char separator = '    ';
   const int nameWidth = 6;
   const int numWidth = 8;
   cout << "Distribution of Income" << endl;
   cout << "-------------------------------------------------------------------" << endl;
-  cout << "Bill      "<<"    Percent of Income     " << "   Annual Cost" << endl;
+  std::cout << center("Bill", 10) << " | "
+    << center("Percent of Income", 10) << " | "
+    << center("Total Annual Cost", 10) << "\n";
   cout << "-------------------------------------------------------------------" << endl;
+  for (int x = 0; x < bills.size(); x++) {
+    std::cout << prd(bills[x], 2, 10) << " | "
+      << prd(bills)
+  }
   cout << left << setw(nameWidth) << setfill(separator) << "Rent/Mortgage";
   cout << left << setw(numWidth) << setfill(separator) << rent[1];
   cout << left << setw(numWidth) << setfill(separator) << rent[2] << endl;
