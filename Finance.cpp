@@ -129,6 +129,7 @@ double calculatePercent() {
   cellphone[1] = (cellphone[0] * percent) / grossAverage;
   health[1] = (health[0] * percent) / grossAverage;
   transportation[1] = (transportation[0] * percent) / grossAverage;
+  other[1] = (other[0] * percent) / grossAverage;
 
   return rent[1], electricBill[1], internetBill[1], creditCardBill[1], gasBill[1], carLoan[1], carInsurance[1], entertainment[1], food[1], cellphone[1], health[1], transportation[1];
 }
@@ -148,6 +149,7 @@ double calculateAnnual() {
   cellphone[2] = cellphone[0] * months;
   health[2] = health[0] * months;
   transportation[2] = transportation[0] * months;
+  other[2] = other[0] * months;
   return rent[2], electricBill[2], internetBill[2], creditCardBill[2], gasBill[2], carLoan[2], carInsurance[2], entertainment[2], food[2], cellphone[2], health[2], transportation[2];
 }
 
@@ -169,6 +171,39 @@ char chart() {
   cout << left << setw(nameWidth) << setfill(separator) << "Electric Bill";
   cout << left << setw(numWidth) << setfill(separator) << electricBill[1];
   cout << left << setw(numWidth) << setfill(separator) << electricBill[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Internet Bill";
+  cout << left << setw(numWidth) << setfill(separator) << internetBill[1];
+  cout << left << setw(numWidth) << setfill(separator) << internetBill[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Gas Bill";
+  cout << left << setw(numWidth) << setfill(separator) << gasBill[1];
+  cout << left << setw(numWidth) << setfill(separator) << gasBill[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Credit Card Bill";
+  cout << left << setw(numWidth) << setfill(separator) << creditCardBill[1];
+  cout << left << setw(numWidth) << setfill(separator) <<creditCardBill[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Car Payment";
+  cout << left << setw(numWidth) << setfill(separator) << carLoan[1];
+  cout << left << setw(numWidth) << setfill(separator) << carLoan[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Car Insurance";
+  cout << left << setw(numWidth) << setfill(separator) << carInsurance[1];
+  cout << left << setw(numWidth) << setfill(separator) << carInsurance[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Entertainment Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << entertainment[1];
+  cout << left << setw(numWidth) << setfill(separator) << entertainment[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Food Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << food[1];
+  cout << left << setw(numWidth) << setfill(separator) << food[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Cell Phone Bill";
+  cout << left << setw(numWidth) << setfill(separator) << cellphone[1];
+  cout << left << setw(numWidth) << setfill(separator) << cellphone[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Health Expenses";
+  cout << left << setw(numWidth) << setfill(separator) << health[1];
+  cout << left << setw(numWidth) << setfill(separator) << health[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Transportation expenses";
+  cout << left << setw(numWidth) << setfill(separator) << transportation[1];
+  cout << left << setw(numWidth) << setfill(separator) << transportation[2] << endl;
+  cout << left << setw(numWidth) << setfill(separator) << "Other expenses";
+  cout << left << setw(numWidth) << setfill(separator) << other[1];
+  cout << left << setw(numWidth) << setfill(separator) << other[2];
 }
 
 int main() {
